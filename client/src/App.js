@@ -42,6 +42,10 @@ class App extends React.Component {
   render() {
     return (
       <AppWrapper>
+        <header className="app-header">
+          <h2>Women World Cup</h2>
+          <p>Women's World Cup players ranked by search interest from Google Trends, June-July 2019, worldwide</p>
+        </header>
 
         <PieChart 
           labels={this.state.labels} 
@@ -65,10 +69,9 @@ const AppWrapper = styled.div`
   background: rgba(0, 0, 0, .9);
 
   .app-header {
-    color: white;
+    color: rgba(255, 255, 255, .8);
     text-align: center;
-    margin-bottom: 5rem;
-    max-width: 500px;
+    margin-bottom: 6rem;
 
     h2 {
       margin-bottom: .5rem;
@@ -76,7 +79,9 @@ const AppWrapper = styled.div`
     }
 
     p {
-      font-size: 1.7rem;
+      font-size: 1.5rem;
+      line-height: 1.4;
+      max-width: 400px;
     }
   }
 `
