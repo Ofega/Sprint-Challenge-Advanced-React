@@ -1,5 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
+import { PieChart } from './components/PieChart';
+
 
 class App extends React.Component {
 
@@ -38,11 +41,42 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="app-wrapper">
-        
-      </div>
+      <AppWrapper>
+
+        <PieChart 
+          labels={this.state.labels} 
+          data={this.state.data} 
+          colors={this.state.colors} 
+        />
+      </AppWrapper>
     )
   }
 }
 
 export default App;
+
+const AppWrapper = styled.div`
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .9);
+
+  .app-header {
+    color: white;
+    text-align: center;
+    margin-bottom: 5rem;
+    max-width: 500px;
+
+    h2 {
+      margin-bottom: .5rem;
+      font-size: 3.5rem;
+    }
+
+    p {
+      font-size: 1.7rem;
+    }
+  }
+`
