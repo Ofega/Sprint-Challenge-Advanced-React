@@ -6,7 +6,6 @@ import { useLocalStorage } from '../hooks/useLocalStorage';
 
 export const PieChart = props => {
     const [ config ] = useLocalStorage('config', props);
-
     const {labels, data, colors} = config;
 
 
@@ -25,6 +24,7 @@ export const PieChart = props => {
             position: 'left'
         }
     }
+    
     return (
         <ChartWrap>
           <Pie data={pieData} options={options} />
