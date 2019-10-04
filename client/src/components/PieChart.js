@@ -1,11 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Pie } from 'react-chartjs-2';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 
 export const PieChart = props => {
+    const [ config ] = useLocalStorage('config', props);
 
-    const {labels, data, colors} = props
+    const {labels, data, colors} = config;
+
 
     const pieData = {
         labels: labels,
